@@ -3,9 +3,10 @@ import axios from "axios";
 import React from "react";
 import { useGlobalContext } from "./context";
 
-const url =
-  `https://api.unsplash.com/search/photos?client_id=${import.meta.env.VITE_API_KEY}`;
-  console.log(import.meta.env.VITE_API_KEY)
+const url = `https://api.unsplash.com/search/photos?client_id=${
+  import.meta.env.VITE_API_KEY
+}`;
+console.log(import.meta.env.VITE_API_KEY);
 
 const Gallery = () => {
   const { searchTerm } = useGlobalContext();
@@ -46,7 +47,7 @@ const Gallery = () => {
     <section className="image-container">
       {results.map((item) => {
         const url = item?.urls?.regular;
-        return <img src={url} key={item.id} alt={item.alt_description} />;
+        return <img src={url} key={item.id} alt={item.alt_description} className="img"/>;
       })}
     </section>
   );
